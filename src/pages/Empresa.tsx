@@ -4,7 +4,8 @@ import {
   Eye, 
   Award, 
   Users, 
-  TrendingUp 
+  TrendingUp, 
+  CheckCircle2
 } from "lucide-react";
 import WaveSeparator from "../components/decorators/WaveSeparator";
 
@@ -14,6 +15,14 @@ const values = [
   { icon: Users, title: "Confiabilidad", description: "Información precisa y sistema estables" },
   { icon: TrendingUp, title: "Responsabilidad", description: "Actuamos con rapidez y profesionalismo" },
 ];
+
+const achievements = [
+  "Más de 10 años de experiencia en el mercado peruano",
+  "Cobertura nacional con monitoreo satelital 24/7",
+  "Equipo de soporte técnico altamente capacitado",
+  "Implementación de tecnología de punta para rastreo GPS",
+  "Alianzas estratégicas con empresas líderes en seguridad vehicular",
+]
 
 const Empresa = () => {
   return (
@@ -42,7 +51,7 @@ const Empresa = () => {
 
       {/* About Section */}
       <section className="py-16 md:py-24 bg-[#F8F9FA]">
-        <div className="container mx-auto">
+        <div className="container mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -50,10 +59,10 @@ const Empresa = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-[#1C242F] mb-6">
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-black mb-6">
                 ¿Quiénes Somos?
               </h2>
-              <div className="space-y-4 text-[#616F83] leading-relaxed">
+              <div className="space-y-4 text-blue-950 leading-relaxed">
                 <p>
                   Somos una empresa especializada en servicio de GPS y monitoreo vehicular satelital 24/7, dedicada a brindar seguridad, control y tranquilidad a personas y empresas.
                 </p>
@@ -67,15 +76,30 @@ const Empresa = () => {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
+              initial={{ opacity: 0, x: 0.9 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="relative"
+              className="bg-[#ffff] rounded-3xl shadow-elevated p-8"
             >
-              <div className="aspect-video rounded-3xl bg-linear-to-br from-[#0E3B9A]/20 to-[#F97316]/20 flex items-center justify-center">
-                <Users className="w-24 h-24 text-[#0E3B9A]/40" />
-              </div>
+              <h3 className="text-2xl font-display font-bold text-black mb-6">
+                Nuestros Logros
+              </h3>
+              <ul className="space-y-4">
+                {achievements.map((achievement, index) => (
+                  <motion.li
+                    key={achievement}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    className="text-[#616F83] flex items-center gap-3"
+                  >
+                    <CheckCircle2 className="w-5 h-5 text-amber-600 shrink-0" />
+                    <span className="text-blue-950">{achievement}</span>
+                  </motion.li>
+              ))}
+              </ul>
             </motion.div>
           </div>
         </div>
@@ -94,7 +118,7 @@ const Empresa = () => {
                             hover:shadow-[0_30px_60px_-20px_rgba(15,23,41,0.2)]
                             transition-all duration-300"
               >
-                <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-[#0E3B9A] to-[#1D4ED8] flex items-center justify-center mb-6">
+                <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-[#0E3B9A] to-[#1D4ED8] flex items-center justify-center mb-6">
                   <Target className="w-8 h-8 text-[#F8FAFC]" />
                 </div>
                 <h3 className="text-2xl lg:text-3xl font-display font-bold text-[#0F1729] mb-4">
@@ -114,7 +138,7 @@ const Empresa = () => {
                             hover:shadow-[0_30px_60px_-20px_rgba(15,23,41,0.2)]
                             transition-all duration-300"
               >
-                <div className="w-16 h-16 rounded-2xl bg-linear-to-br from-[#0E3B9A] to-[#1D4ED8] flex items-center justify-center mb-6">
+                <div className="w-14 h-14 rounded-2xl bg-linear-to-br from-[#0E3B9A] to-[#1D4ED8] flex items-center justify-center mb-6">
                   <Eye className="w-8 h-8 text-[#F8FAFC]" />
                 </div>
                 <h3 className="text-2xl lg:text-3xl font-display font-bold text-[#0F1729] mb-4">
@@ -126,12 +150,12 @@ const Empresa = () => {
               </motion.div>
           </div>
         </div>
-        <WaveSeparator color="background" className="absolute bottom-0" />
+        <WaveSeparator color="background" className="bottom-0" />
       </section>
 
       {/* Values Section */}
       <section className="bg-[#F8F9FA]">
-        <div className="container-wide mx-auto px-4 sm:px-6 py-24 lg:py-32">
+        <div className="container-wide mx-auto px-4 sm:px-6 py-20 lg:py-32">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -155,13 +179,13 @@ const Empresa = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                className="bg-[#FFFFFF] rounded-3xl p-12 shadow-[0_16px_32px_-20px_rgba(15,23,41,0.15)]
+                className="bg-[#FFFFFF] rounded-3xl p-12 shadow-[#00000015] hover:shadow-[0_30px_60px_-20px_rgba(0,0,0,0.2)]
                             hover:-translate-y-1
-                            hover:shadow-[#616F83]
+                            hover:shadow-[#492409]
                             transition-all duration-300
                             text-center"
               >
-                <div className="w-16 h-16 rounded-2xl bg-[#F97A1F]/30 flex items-center justify-center mx-auto mb-4">
+                <div className="w-14 h-14 rounded-2xl bg-[#F97A1F]/30 flex items-center justify-center mx-auto mb-4">
                   <value.icon className="w-8 h-8 text-[#F97A1F]" />
                 </div>
                 <h3 className="text-lg font-display font-bold text-[#0F1729] mb-3">

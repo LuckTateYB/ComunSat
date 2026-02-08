@@ -14,7 +14,7 @@ import {
   Settings
 } from "lucide-react";
 import FloatingShapes from "../components/decorators/FloatingShapes";
-import banner_comunsat from "../assets/banner_comunsat.webp"
+import banner_comunsat from "../assets/bannercomunsat.webp";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -66,20 +66,17 @@ const Index = () => {
           />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-linear-to-r from-black/90 via-black to-black/50" />
-        {/* Decorative shapes */}
-        <FloatingShapes variant="hero" />
-
+        <div className="absolute inset-0 bg-linear-to-r from-black/90 to-black/50" />
         {/* Content */}
         <div className="container-wide mx-auto px-4 sm:px-6 py-20 lg:py-32 relative z-10">
-            <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+            <div className="flex lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
             {/* Text Content */}
             <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-center lg:text-left text-white"
+                className="text-center lg:text-left font-extrabold text-white"
             >
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start mb-10">
@@ -144,36 +141,6 @@ const Index = () => {
 
                 </div>
             </motion.div>
-
-            {/* Visual Element */}
-            <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="relative hidden lg:block"
-            >
-                <div className="relative w-full aspect-square max-w-lg mx-auto">
-                <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                    className="absolute inset-0 rounded-full border-2 border-dashed border-white/30"
-                />
-                <motion.div
-                    animate={{ rotate: -360 }}
-                    transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                    className="absolute inset-8 rounded-full border-2 border-dashed border-white/20"
-                />
-
-                <div className="absolute inset-16 rounded-full bg-[#ED8E20]/10 backdrop-blur-sm flex items-center justify-center">
-                    <div className="text-center">
-                    <Navigation className="w-20 h-20 text-white mx-auto mb-4" />
-                    <p className="font-display font-bold text-3xl">GPS</p>
-                    <p className="text-white/70 font-bold text-sm">Tracking</p>
-                    </div>
-                </div>
-                </div>
-            </motion.div>
-
             </div>
         </div>
         </section>

@@ -23,7 +23,7 @@ const products = [
       "Resistente al agua IP65"
     ],
     specs: {
-      connectivity: "2G/3G",
+      connectivity: "2G/4G",
       battery: "Batería de respaldo",
       accuracy: "5-10 metros"
     }
@@ -33,7 +33,7 @@ const products = [
     name: "Volttak GS900",
     category: "GPS Avanzado",
     features: [
-      "4G LTE conectividad",
+      "4G conectividad",
       "Sensor de combustible",
       "Monitoreo de temperatura",
       "Alertas personalizables",
@@ -41,8 +41,8 @@ const products = [
       "API de integración"
     ],
     specs: {
-      connectivity: "4G LTE",
-      battery: "Batería interna",
+      connectivity: "4G",
+      battery: "Batería de respaldo",
       accuracy: "2.5 metros"
     }
   },
@@ -59,8 +59,8 @@ const products = [
       "Precio accesible"
     ],
     specs: {
-      connectivity: "2G",
-      battery: "Alimentación vehículo",
+      connectivity: "2G/4G",
+      battery: "Batería de respaldo",
       accuracy: "5 metros"
     }
   },
@@ -78,7 +78,7 @@ const products = [
     ],
     specs: {
       connectivity: "4G",
-      battery: "Batería + vehículo",
+      battery: "Batería de larga duración",
       accuracy: "3 metros"
     }
   }
@@ -118,7 +118,7 @@ const Productos = () => {
       </section>
 
       {/* Products Grid */}
-      <section className="py-16 md:py-24 bg-background">
+      <section className="py-16 md:py-24 bg-[#F8F9FA]">
         <div className="container mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -133,12 +133,12 @@ const Productos = () => {
             <h2 className="text-3xl sm:text-4xl font-display font-bold text-[#000000]">
               Nuestros Equipos GPS
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto mt-4">
+            <p className="text-[#616F83] max-w-2xl mx-auto mt-4">
               Equipos de rastreo GPS de alta calidad para todo tipo de vehículos y necesidades.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 ">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 ">
             {products.map((product, index) => (
               <motion.div
                 key={product.id}
@@ -146,7 +146,7 @@ const Productos = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group bg-card rounded-3xl shadow-card hover:shadow-elevated transition-all duration-300 overflow-hidden"
+                className="group bg-[#ffffff] rounded-3xl shadow-[0_20px_40px_-20px_rgba(15,23,41,0.15)] hover:shadow-[0_30px_60px_-20px_rgba(15,23,41,0.2)] transition-all duration-300 overflow-hidden"
               >
                 {/* Product Image (full cover) */}
                 <div className="aspect-video relative overflow-hidden">
@@ -155,48 +155,30 @@ const Productos = () => {
                     alt={product.name}
                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   />
-                  <span className="absolute top-4 right-4 z-10 px-3 py-1 rounded-full bg-[#F97A1F]/10 text-[#F97A1F] text-xs font-semibold">
-                    {product.category}
-                  </span>
                 </div>
 
                 <div className="p-6 lg:p-8">
-                  <h3 className="text-4xl font-display font-bold text-[#1C242F] mb-4">
+                  <h3 className="text-2xl font-display font-bold text-[#1C242F] mb-4">
                     {product.name}
                   </h3>
 
                   {/* Specs */}
                   <div className="flex flex-wrap gap-3 mb-6">
-                    <div className="flex items-center gap-2 px-3 py-1.5 border-[#0B68DA] border-2 rounded-full bg-[#0B68DA]/10 text-[#0B68DA] text-m">
-                      <img
-                        src={productImages[product.id]}
-                        alt={`${product.name} pic`}
-                        className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 object-contain"
-                      />
+                    <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0B68DA]/10 text-[#0B68DA] text-sm">
                       {product.specs.connectivity}
                     </div>
-                    <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0B68DA]/10 text-[#0B68DA] text-m">
-                      <img
-                        src={productImages[product.id]}
-                        alt={`${product.name} pic`}
-                        className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 object-contain"
-                      />
+                    <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#F97A1F]/10 text-[#F97A1F] text-sm">
                       {product.specs.battery}
                     </div>
-                    <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#0B68DA]/10 text-[#0B68DA] text-m">
-                      <img
-                        src={productImages[product.id]}
-                        alt={`${product.name} pic`}
-                        className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 object-contain"
-                      />
+                    <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#000000]/10 text-[#353030] text-sm">
                       {product.specs.accuracy}
                     </div>
                   </div>
 
                   {/* Features */}
-                  <ul className="grid grid-cols-2 gap-2 mb-6">
+                  <ul className="grid grid-cols-1 gap-2 mb-6">
                     {product.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-2 text-m text-[#616F83]">
+                      <li key={feature} className="flex items-center gap-2 text-xs text-[#616F83]">
                         <div className="w-1.5 h-1.5 rounded-full bg-[#F97A1F]" />
                         {feature}
                       </li>
@@ -206,9 +188,9 @@ const Productos = () => {
                   <button
                     onClick={() => navigate('contacto')}
                     className="inline-flex items-center justify-center gap-3
-                            px-8 py-4 text-lg font-semibold
-                            rounded-xl border border-[#1C242F]
-                            text-[#1C242F]
+                            px-8 py-4 text-sm font-semibold
+                            rounded-xl border border-[#0E3B9A]
+                            text-[#0E3B9A]
                             hover:bg-[#0E3B9A] hover:text-white
                             transition-all duration-200"
                 >
