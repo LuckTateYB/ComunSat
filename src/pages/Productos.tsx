@@ -7,6 +7,7 @@ import baanool from "../assets/BAANOOL 403B.webp";
 import voltak from "../assets/voltak gs900.webp";
 import sitorack901 from "../assets/sinotrack st901 4G.webp";
 import sinotrack905 from "../assets/sinotrack st905L.webp";
+import FloatingShapes from "../components/decorators/FloatingShapes";
 import WaveSeparator from "../components/decorators/WaveSeparator";
 
 const products = [
@@ -214,6 +215,7 @@ const Productos = () => {
             transition={{ duration: 0.6 }}
             className="bg-linear-to-br from-primary to-primary/80 rounded-3xl p-8 lg:p-16 text-center relative overflow-hidden"
           >
+            <FloatingShapes variant="section" />
             <div className="relative z-10">
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-bold text-[#FFFFFF] mb-4">
                 ¿No encuentras lo que buscas?

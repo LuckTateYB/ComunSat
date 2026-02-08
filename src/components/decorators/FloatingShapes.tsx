@@ -26,7 +26,7 @@ const FloatingShapes = ({ variant = "hero" }: FloatingShapesProps) => {
         <motion.svg
           animate={{ y: [0, -15, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-20 right-10 w-16 h-16 text-primary-foreground/20"
+          className="absolute top-20 right-10 w-16 h-16 text-[#F97A1F]/50"
           viewBox="0 0 24 24"
           fill="currentColor"
         >
@@ -37,12 +37,12 @@ const FloatingShapes = ({ variant = "hero" }: FloatingShapesProps) => {
         <motion.div
           animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.1, 0.3] }}
           transition={{ duration: 3, repeat: Infinity }}
-          className="absolute bottom-40 left-20 w-32 h-32 rounded-full border-4 border-primary-foreground/10"
+          className="absolute bottom-40 left-20 w-32 h-32 rounded-full border-4 border-[#F97A1F]/50"
         />
         <motion.div
           animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.05, 0.2] }}
           transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
-          className="absolute bottom-40 left-20 w-48 h-48 rounded-full border-4 border-primary-foreground/5"
+          className="absolute bottom-40 left-20 w-48 h-48 rounded-full border-4 border-[#F97A1F]"
         />
 
         {/* Dots pattern */}
@@ -52,7 +52,7 @@ const FloatingShapes = ({ variant = "hero" }: FloatingShapesProps) => {
               key={i}
               animate={{ opacity: [0.2, 0.5, 0.2] }}
               transition={{ duration: 2, repeat: Infinity, delay: i * 0.1 }}
-              className="w-2 h-2 rounded-full bg-primary-foreground/20"
+              className="w-2 h-2 rounded-full bg-[#F97A1F]/30"
             />
           ))}
         </div>
@@ -65,12 +65,12 @@ const FloatingShapes = ({ variant = "hero" }: FloatingShapesProps) => {
       <motion.div
         animate={{ rotate: 360 }}
         transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-        className="absolute -top-40 -left-40 w-80 h-80 border border-primary/10 rounded-full"
+        className="absolute -top-40 -left-40 w-80 h-80 border-8 border-[#F97A1F]/30 rounded-full"
       />
       <motion.div
         animate={{ rotate: -360 }}
         transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
-        className="absolute -bottom-40 -right-40 w-96 h-96 border border-accent/10 rounded-full"
+        className="absolute -bottom-40 -right-40 w-96 h-96 border-8 border-[#F97A1F]/30 rounded-full"
       />
     </div>
   );
