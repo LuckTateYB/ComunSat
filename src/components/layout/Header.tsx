@@ -97,7 +97,7 @@ const Header = () => {
             {/* Desktop External Buttons */}
           <div className="hidden lg:flex items-center gap-3">
             <Button variant="outline" size="sm" asChild>
-              <a href="https://plataforma.example.com" target="_blank" rel="noopener noreferrer">
+              <a href="http://flotamtc.com:8080/premium/Track?page=login" target="_blank" rel="noopener noreferrer">
                 <MapPin className="w-4 h-4" />
                 Plataforma GPS
                 <ExternalLink className="w-3 h-3" />

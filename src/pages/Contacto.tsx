@@ -11,7 +11,7 @@ import {
 import WaveSeparator from "../components/decorators/WaveSeparator";
 
 const contactInfo = [
-  { icon: Phone, label: "Teléfono", value: "+51 999 999 999" },
+  { icon: Phone, label: "Teléfono", value: "+51 926 953 141" },
   { icon: Mail, label: "Email", value: "info@comunsat.pe" },
   { icon: MapPin, label: "Dirección", value: "Lima, Perú" },
   { icon: Clock, label: "Horario", value: "Lun - Sáb: 8am - 6pm" },
@@ -45,7 +45,7 @@ const Contacto = () => {
       {/* Contact Section */}
       <section className="section-padding bg-[#F8F9FA] py-12 md:py-15">
         <div className="container-wide mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 px-5 sm:px-8">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-20 px-4 sm:px-8">
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -53,12 +53,12 @@ const Contacto = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h2 className="text-2xl sm:text-3xl font-display font-bold text-foreground mb-6">
+              <h2 className="text-2xl sm:text-3xl font-display font-bold text-foreground mb-5 sm:mb-6">
                 Envíanos un Mensaje
               </h2>
 
               {/* WhatsApp Buttons */}
-              <div className="bg-white rounded-3xl p-6 lg:p-8 shadow-black">
+              <div className="bg-white rounded-3xl p-5 sm:p-6 lg:p-8 shadow-black">
                 <h3 className="text-xl font-display font-bold text-[#1A2738] mb-4">
                   WhatsApp Directo
                 </h3>
@@ -69,35 +69,35 @@ const Contacto = () => {
                 <div className="space-y-4">
                   <button className="w-full justify-center">
                     <a
-                      href="https://wa.me/51999999999"
+                      href="https://wa.me/51998624596"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-4
-                                px-50 py-4 text-lg font-semibold
+                                w-full px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-lg font-semibold text-center
                                 rounded-xl border border-[#1C242F]
                                 text-[#1C242F] bg-[#3bce1e]
                                 hover:bg-[#5eaf4a]
                                 transition-all duration-200"
                     >
-                      <MessageCircle className="w-5 h-5" />
-                      WhatsApp
+                      <MessageCircle className="w-5 h-5 shrink-0" />
+                      WhatsApp Comercial
                     </a>
                   </button>
 
                   <button className="w-full justify-center">
                     <a
-                      href="https://wa.me/51888888888?text=Hola,%20necesito%20soporte%20técnico"
+                      href="https://wa.me/51937656538?text=Hola,%20necesito%20soporte%20técnico"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center justify-center gap-4
-                                px-28 py-4 text-lg font-semibold
+                                w-full px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-lg font-semibold text-center
                                 rounded-xl border border-[#1C242F]
                                 text-[#1C242F] bg-[#3bce1e]
                                 hover:bg-[#5eaf4a]
                                 transition-all duration-200"
                     >
-                      <Headphones className="w-5 h-5" />
-                      WhatsApp Post-Venta / Rastreo
+                      <Headphones className="w-5 h-5 shrink-0" />
+                      WhatsApp Soporte
                     </a>
                   </button>
                 </div>
@@ -113,7 +113,7 @@ const Contacto = () => {
               className="space-y-8"
             >
               {/* Contact Info */}
-              <div className="bg-card rounded-3xl p-6 lg:p-8 shadow-[#ffff]">
+              <div className="bg-card rounded-3xl p-5 sm:p-6 lg:p-8 shadow-[#ffff]">
                 <h3 className="text-xl font-display font-bold text-[#1A2738] mb-6">
                   Información de Contacto
                 </h3>
@@ -123,9 +123,9 @@ const Contacto = () => {
                       <div className="w-12 h-12 rounded-xl bg-[#123A5F]/10 flex items-center justify-center shrink-0">
                         <info.icon className="w-5 h-5 text-[#123A5F]" />
                       </div>
-                      <div>
+                      <div className="min-w-0">
                         <p className="text-sm text-[#5C6B7A]">{info.label}</p>
-                        <p className="font-semibold text-[#1A2738]">{info.value}</p>
+                        <p className="font-semibold text-[#1A2738] wrap-break-words">{info.value}</p>
                       </div>
                     </div>
                   ))}
@@ -140,3 +140,4 @@ const Contacto = () => {
 };
 
 export default Contacto;
+
