@@ -8,7 +8,6 @@ import {
   Clock, 
   Smartphone,
   ExternalLink,
-  Navigation,
   Radio,
   Truck,
   Settings
@@ -79,16 +78,16 @@ const Index = () => {
                 className="text-center lg:text-left font-extrabold text-white"
             >
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start mb-10">
+                <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start mt-17">
                   {/* Primary CTA */}
                   <button
                     onClick={() => navigate('contacto')}
-                    className="inline-flex items-center justify-center gap-3
+                    className="hidden lg:inline-flex items-center justify-center gap-3
                               px-8 py-4 text-lg font-semibold
-                              rounded-xl border-2 border-white
-                              text-white
-                              hover:bg-white/10
-                              transition-all duration-200"
+                              rounded-xl text-white bg-white/10
+                              hover:bg-white/20 hover:shadow-lg hover:shadow-white/20
+                              hover:scale-105
+                              transition-all duration-300"
                   >
                     Solicitar Cotización
                   </button>
@@ -98,47 +97,30 @@ const Index = () => {
                     onClick={() => navigate('productos')}
                     className="hidden lg:inline-flex items-center justify-center gap-3
                               px-8 py-4 text-lg font-semibold
-                              rounded-x text-primary rounded-xl
-                              hover:bg-white/10
-                              transition-all duration-200"
+                              rounded-xl text-white bg-white/10
+                              hover:bg-white/20 hover:shadow-lg hover:shadow-white/20
+                              hover:scale-105
+                              transition-all duration-300"
                   >
                     Ver Productos
                   </button>
-                </div>
 
-                {/* External buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+
                   <a
                     href="http://flotamtc.com:8080/premium/Track?page=login"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-3
-                              px-7 py-3.5 text-base font-semibold
-                              rounded-xl text-white border border-white
-                              hover:bg-white/10
-                              transition-all duration-200 shadow-lg"
+                    className="hidden lg:inline-flex items-center justify-center gap-3
+                              px-8 py-4 text-lg font-semibold
+                              rounded-xl text-white bg-white/10
+                              hover:bg-white/20 hover:shadow-lg hover:shadow-white/20
+                              hover:scale-105
+                              transition-all duration-300"
                   >
                     <MapPin className="w-5 h-5" />
                     Plataforma GPS
                     <ExternalLink className="w-4 h-4" />
                   </a>
-
-                  {/* Desktop only */}
-                  <a
-                    href="https://rastreo.example.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hidden lg:inline-flex items-center justify-center gap-3
-                              px-7 py-3.5 text-base font-semibold
-                              rounded-xl text-primary
-                              hover:bg-white/30
-                              transition-all duration-200"
-                  >
-                    <Navigation className="w-5 h-5" />
-                    Rastreo GPS
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
-
                 </div>
             </motion.div>
             </div>

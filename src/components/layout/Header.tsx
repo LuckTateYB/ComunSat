@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import Button from "../ui/button";
-import { Menu, X, ExternalLink, MapPin, Navigation } from "lucide-react";
+import { Menu, X, ExternalLink, MapPin } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "../../context/useRouter";
 import comunsat_logo from "../../assets/comunsat_logo.webp"
@@ -80,13 +80,13 @@ const Header = () => {
                     navigate(route);
                     rrNavigate(item.path);
                   }}
-                  className="relative px-4 py-2 text-sm font-medium text-primary-foreground/80 hover:text-primary-foreground transition-colors"
+                  className="relative px-4 py-2 text-sm font-medium text-black hover:text-[#0B2C6B] transition-colors"
                 >
                   {item.label}
                   {location.pathname === item.path && (
                     <motion.div
                       layoutId="activeIndicator"
-                      className="absolute inset-0 bg-primary-foreground/10 rounded-full"
+                      className="absolute inset-0 bg-[#0B2C6B]/10 rounded-full"
                       transition={{ type: "spring", stiffness: 380, damping: 30 }}
                     />
                   )}
@@ -100,13 +100,6 @@ const Header = () => {
               <a href="http://flotamtc.com:8080/premium/Track?page=login" target="_blank" rel="noopener noreferrer">
                 <MapPin className="w-4 h-4" />
                 Plataforma GPS
-                <ExternalLink className="w-3 h-3" />
-              </a>
-            </Button>
-            <Button variant="accent" size="sm" asChild>
-              <a href="https://rastreo.example.com" target="_blank" rel="noopener noreferrer">
-                <Navigation className="w-4 h-4" />
-                Rastreo GPS
                 <ExternalLink className="w-3 h-3" />
               </a>
             </Button>

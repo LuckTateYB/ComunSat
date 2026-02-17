@@ -12,7 +12,7 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 const variantMap: Record<Variant, string> = {
-  outline: "border border-input bg-transparent text-foreground hover:bg-muted",
+  outline: "border border-[#000000] bg-transparent text-foreground hover:bg-[#0B2C6B]/90 hover:text-white",
   accent: "bg-primary text-primary-foreground hover:opacity-95",
   ghost: "bg-transparent hover:bg-muted",
   default: "bg-card",

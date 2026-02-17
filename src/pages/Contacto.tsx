@@ -4,14 +4,13 @@ import {
   Phone, 
   MapPin, 
   Clock,
-  MessageCircle,
   Headphones
 } from "lucide-react";
 
 import WaveSeparator from "../components/decorators/WaveSeparator";
 
 const contactInfo = [
-  { icon: Phone, label: "Teléfono", value: "+51 926 953 141" },
+  { icon: Phone, label: "Teléfono", value: "+51 926 953 141", whatsapp: "51998624596" },
   { icon: Mail, label: "Email", value: "info@comunsat.pe" },
   { icon: MapPin, label: "Dirección", value: "Lima, Perú" },
   { icon: Clock, label: "Horario", value: "Lun - Sáb: 8am - 6pm" },
@@ -58,49 +57,29 @@ const Contacto = () => {
               </h2>
 
               {/* WhatsApp Buttons */}
-              <div className="bg-white rounded-3xl p-5 sm:p-6 lg:p-8 shadow-black">
-                <h3 className="text-xl font-display font-bold text-[#1A2738] mb-4">
-                  WhatsApp Directo
+              <div className="bg-linear-to-br from-[#0B2C6B] to-[#123A5F] rounded-3xl p-5 sm:p-6 lg:p-8 shadow-lg">
+                <h3 className="text-xl font-display font-bold text-[#FFFFFF] mb-2">
+                  Soporte Técnico 24/7
                 </h3>
-                <p className="text-[#5C6B7A] mb-6">
-                  Comunícate directamente con nuestro equipo vía WhatsApp para una respuesta más rápida.
+                <p className="text-[#b6b0b0]/80 mb-6">
+                  Nuestro equipo está disponible todo el día para ayudarte con cualquier inconveniente.
                 </p>
                 
-                <div className="space-y-4">
-                  <button className="w-full justify-center">
-                    <a
-                      href="https://wa.me/51998624596"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-4
-                                w-full px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-lg font-semibold text-center
-                                rounded-xl border border-[#1C242F]
-                                text-[#1C242F] bg-[#3bce1e]
-                                hover:bg-[#5eaf4a]
-                                transition-all duration-200"
-                    >
-                      <MessageCircle className="w-5 h-5 shrink-0" />
-                      WhatsApp Comercial
-                    </a>
-                  </button>
-
-                  <button className="w-full justify-center">
-                    <a
-                      href="https://wa.me/51937656538?text=Hola,%20necesito%20soporte%20técnico"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-4
-                                w-full px-4 sm:px-6 py-3 sm:py-4 text-base sm:text-lg font-semibold text-center
-                                rounded-xl border border-[#1C242F]
-                                text-[#1C242F] bg-[#3bce1e]
-                                hover:bg-[#5eaf4a]
-                                transition-all duration-200"
-                    >
-                      <Headphones className="w-5 h-5 shrink-0" />
-                      WhatsApp Soporte
-                    </a>
-                  </button>
-                </div>
+                <a
+                  href="https://wa.me/51937656538?text=Hola,%20necesito%20soporte%20técnico"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-3
+                            w-full px-4 sm:px-6 py-4 sm:py-5 text-base sm:text-lg font-semibold text-center
+                            rounded-xl
+                            text-white bg-[#F97A1F]
+                            hover:bg-[#ED8E20] hover:shadow-lg hover:shadow-[#F97A1F]/30
+                            hover:scale-105
+                            transition-all duration-300"
+                >
+                  <Headphones className="w-5 h-5 shrink-0" />
+                  WhatsApp Soporte (24/7)
+                </a>
               </div>
             </motion.div>
 
@@ -125,7 +104,18 @@ const Contacto = () => {
                       </div>
                       <div className="min-w-0">
                         <p className="text-sm text-[#5C6B7A]">{info.label}</p>
-                        <p className="font-semibold text-[#1A2738] wrap-break-words">{info.value}</p>
+                        {info.whatsapp ? (
+                          <a
+                            href={`https://wa.me/${info.whatsapp}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="font-semibold text-[#1A2738] hover:text-[#F97A1F] transition-colors duration-200"
+                          >
+                            {info.value}
+                          </a>
+                        ) : (
+                          <p className="font-semibold text-[#1A2738] wrap-break-words">{info.value}</p>
+                        )}
                       </div>
                     </div>
                   ))}
