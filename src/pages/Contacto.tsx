@@ -10,7 +10,8 @@ import {
 import WaveSeparator from "../components/decorators/WaveSeparator";
 
 const contactInfo = [
-  { icon: Phone, label: "Teléfono", value: "+51 926 953 141", whatsapp: "51998624596" },
+  { icon: Phone, label: "WhatsApp", value: "+51 926 953 141", whatsapp: "51998624596" },
+  { icon: Phone, label: "WhatsApp 2", value: "+51 998 624 596", whatsapp: "51998624596" },
   { icon: Mail, label: "Email", value: "info@comunsat.pe" },
   { icon: MapPin, label: "Dirección", value: "Lima, Perú" },
   { icon: Clock, label: "Horario", value: "Lun - Sáb: 8am - 6pm" },

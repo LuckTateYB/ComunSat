@@ -13,7 +13,7 @@ import {
   Settings
 } from "lucide-react";
 import FloatingShapes from "../components/decorators/FloatingShapes";
-import banner_comunsat from "../assets/bannercomunsat.webp";
+import banner_comunsat from "../assets/banner.webp";
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -50,18 +50,13 @@ const Index = () => {
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
-        <section className="relative h-[70vh] sm:h-[80vh] lg:h-[90vh] flex items-center overflow-hidden">
+        <section className="relative w-full aspect-1355/602 lg:h-[90vh] flex items-center overflow-hidden">
         
         {/* Background Image */}
-          <div
-            className="
-              absolute inset-0
-              bg-cover
-              bg-position-[right_center]
-              lg:bg-center
-            "
-            style={{ backgroundImage: `url(${banner_comunsat})` }}
-            aria-hidden="true"
+          <img
+            src={banner_comunsat}
+            alt="Rastreo satelital Comunsat"
+            className="absolute bg-cover bg-right lg:bg-center"
           />
 
         {/* Overlay */}
