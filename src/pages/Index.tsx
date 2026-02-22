@@ -73,25 +73,12 @@ const Index = () => {
                 className="text-center lg:text-left font-extrabold text-white"
             >
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-5 justify-center lg:justify-start mt-17">
-                  {/* Primary CTA */}
-                  <button
-                    onClick={() => navigate('contacto')}
-                    className="hidden lg:inline-flex items-center justify-center gap-3
-                              px-8 py-4 text-lg font-semibold
-                              rounded-xl text-white bg-white/10
-                              hover:bg-white/20 hover:shadow-lg hover:shadow-white/20
-                              hover:scale-105
-                              transition-all duration-300"
-                  >
-                    Solicitar Cotización
-                  </button>
-
-                  {/* Secondary CTA – Desktop only */}
+                <div className="flex flex-col items-center lg:items-start gap-5 justify-center lg:justify-start mt-17">
+                  {/* Mobile CTA - Ver Productos */}
                   <button
                     onClick={() => navigate('productos')}
-                    className="hidden lg:inline-flex items-center justify-center gap-3
-                              px-8 py-4 text-lg font-semibold
+                    className="lg:hidden inline-flex items-center justify-start gap-3
+                              px-4 py-2 text-sm font-semibold
                               rounded-xl text-white bg-white/10
                               hover:bg-white/20 hover:shadow-lg hover:shadow-white/20
                               hover:scale-105
@@ -100,22 +87,50 @@ const Index = () => {
                     Ver Productos
                   </button>
 
+                  {/* Desktop CTA Buttons */}
+                  <div className="hidden lg:flex gap-5 justify-start">
+                    {/* Primary CTA */}
+                    <button
+                      onClick={() => navigate('contacto')}
+                      className="inline-flex items-center justify-center gap-3
+                                px-8 py-4 text-lg font-semibold
+                                rounded-xl text-white bg-white/10
+                                hover:bg-white/20 hover:shadow-lg hover:shadow-white/20
+                                hover:scale-105
+                                transition-all duration-300"
+                    >
+                      Solicitar Cotización
+                    </button>
 
-                  <a
-                    href="http://flotamtc.com:8080/premium/Track?page=login"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hidden lg:inline-flex items-center justify-center gap-3
-                              px-8 py-4 text-lg font-semibold
-                              rounded-xl text-white bg-white/10
-                              hover:bg-white/20 hover:shadow-lg hover:shadow-white/20
-                              hover:scale-105
-                              transition-all duration-300"
-                  >
-                    <MapPin className="w-5 h-5" />
-                    Plataforma GPS
-                    <ExternalLink className="w-4 h-4" />
-                  </a>
+                    {/* Secondary CTA */}
+                    <button
+                      onClick={() => navigate('productos')}
+                      className="inline-flex items-center justify-center gap-3
+                                px-8 py-4 text-lg font-semibold
+                                rounded-xl text-white bg-white/10
+                                hover:bg-white/20 hover:shadow-lg hover:shadow-white/20
+                                hover:scale-105
+                                transition-all duration-300"
+                    >
+                      Ver Productos
+                    </button>
+
+                    <a
+                      href="http://flotamtc.com:8080/premium/Track?page=login"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center gap-3
+                                px-8 py-4 text-lg font-semibold
+                                rounded-xl text-white bg-white/10
+                                hover:bg-white/20 hover:shadow-lg hover:shadow-white/20
+                                hover:scale-105
+                                transition-all duration-300"
+                    >
+                      <MapPin className="w-5 h-5" />
+                      Plataforma GPS
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </div>
                 </div>
             </motion.div>
             </div>
